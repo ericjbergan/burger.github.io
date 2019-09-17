@@ -1,0 +1,36 @@
+<header>
+    <div class="img-container">
+        <img src="../assets/images/hamburger.jpg" alt="image">
+    </div>
+
+</header>
+<h2>Eat-Da-Burger!</h2>
+<div class='row'>
+    <div class='col-md-4' id='left'>
+        <ul>
+            {{#each burger}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured = true}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+
+    </div>
+    <div class='col-md-4' id='middle'></div>
+    <div class='col-md-4' id='right'>
+        <ul>
+            {{#each burger}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured = false}}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="bottom">
+    <textarea rows='2' cols='50' id='newBurger'></textarea>
+    <br>
+    <input type="submit" value="Submit" id="submit">
+    <p id='message'>Enter a burger you want to eat. Click the 'Submit' button.</p>
+</div>
