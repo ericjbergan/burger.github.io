@@ -1,5 +1,5 @@
 $(function () {
-    $("#submit").unbind().click(function (event) {
+    $("#submit").click(function (event) {
 
         var newBurger = {
             burger_name: $("#newBurger").val().trim(),
@@ -19,7 +19,7 @@ $(function () {
 $(function () {
     $("#devour").click(function (event) {
         var id = $(this).data("id");
-
+        console.log('YES GOT ID', id)
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: true
